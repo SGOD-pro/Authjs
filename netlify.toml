@@ -1,8 +1,7 @@
 [build]
   command = "npm run build"  # Compile TypeScript files
-  publish = "dist"  # Optional, if you have static assets to publish
   functions = "netlify/functions"  # The folder for serverless functions
 
 [dev]
   command = "npm run dev"  # For local development
-  port = 3000  # Your local dev port
+  port = 8080  # Your local dev port
