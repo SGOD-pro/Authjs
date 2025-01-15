@@ -17,6 +17,9 @@ app.use(cookieParser())
 //routes
 import userRouter from './routes/auth.routes.js'
 app.use('/user',userRouter)
+app.get('/',(_,res)=>{
+    res.send('Hello World')
+})
 
 
 export {app}
