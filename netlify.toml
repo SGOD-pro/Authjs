@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build"  # Compile TypeScript files
-  functions = "netlify/functions"  # The folder for serverless functions
+  functions = "netlify/functions" # Path to serverless functions
+  command = "npm run build"
+  publish = "dist"
 
-[dev]
-  command = "npm run dev"  # For local development
-  port = 8080  # Your local dev port
+[functions]
+  node_bundler = "esbuild"
