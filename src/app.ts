@@ -16,8 +16,8 @@ app.use(cookieParser())
 
 //routes
 import userRouter from './routes/auth.routes.js'
-app.use('/user',userRouter)
-app.get('/',(_,res)=>{
+app.use('./netlify/functions/api/user',userRouter)
+app.get('./netlify/functions/api',(_,res)=>{
     res.send('Hello World')
 })
 
