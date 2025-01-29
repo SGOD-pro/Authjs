@@ -1,20 +1,15 @@
-import { app } from "./app.js";
+import  {app}  from "./app.js";
 import ConnectDB from "./db/index.js";
-import dotenv from "dotenv";
+import dotenv from 'dotenv'
+dotenv.config({ path: './.env' })
 
-// Load environment variables
-dotenv.config({ path: "./.env" });
 
-// Connect to the database
-(async () => {
-  try {
-    await ConnectDB();
-    console.log("Database connected successfully!");
-  } catch (error) {
-    console.error(`Database connection error: ${(error as Error).message}`);
-    process.exit(1); // Exit if the database connection fails
-  }
-})();
-
-// Export the app (this is optional in case you want to reuse it elsewhere)
-export { app };
+const PORT = 8080;
+ConnectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+}).catch((error) => {
+    console.error(`Errors: ${(error as Error).message}`);
+    process.exit(1);
+});
