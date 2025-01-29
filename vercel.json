@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "**/*", 
+        "use": "@vercel/node",
+        "config": {
+          "installCommand": "npm ci", 
+          "runtime": "nodejs18.x" 
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.js" 
+      }
+    ]
+  }

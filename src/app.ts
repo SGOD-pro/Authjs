@@ -17,8 +17,8 @@ app.use(cookieParser());
 import userRouter from './routes/auth.routes.js';
 
 // The base path for Netlify serverless functions is `/api`
-app.use('/api/user', userRouter); // Fix the route
-app.get('/api', (_, res) => {
+app.use('/user', userRouter); // Fix the route
+app.get('/', (_, res) => {
     res.send('Hello World');
 });
 
