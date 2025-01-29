@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use("/user", userRouter); // User routes
-app.get("/", (_, res) => {
+app.use("/api/user", userRouter); // User routes
+app.get("/api", (_, res) => {
 	res.send("Hello World");
 });
 ConnectDB()
